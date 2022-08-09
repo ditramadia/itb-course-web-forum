@@ -6,12 +6,66 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
-    url      = "file:./dev.db"
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
 }
 
-model GroceryList {
-    id      Int      @id @default(autoincrement())
-    title   String
-    checked Boolean? @default(false)
+model Faculty {
+    // Fakultas
+    id      Int     @id @default(autoincrement())
+    name    String
+    acronym String
+    Major   Major[]
+}
+
+model Major {
+    // Jurusan kuliah
+    id                    Int                     @id @default(autoincrement())
+    code                  Int                     @db.SmallInt
+    name                  String                  @db.VarChar(255)
+    acronym               String                  @db.VarChar(10)
+    faculty               Faculty                 @relation(fields: [facultyId], references: [id], onDelete: Cascade)
+    facultyId             Int
+    SubjectRecommendation SubjectRecommendation[]
+    Subject               Subject[]
+}
+
+enum SubjectType {
+    COMPULSORY
+    ELECTIVE
+}
+
+model Subject {
+    id                    Int                     @id @default(autoincrement())
+    name                  String                  @db.VarChar(255)
+    description           String                  @db.Text
+    credits               Int                     @db.SmallInt
+    type                  SubjectType             @default(COMPULSORY)
+    major                 Major                   @relation(fields: [majorId], references: [id], onDelete: Cascade)
+    SubjectRecommendation SubjectRecommendation[]
+    majorId               Int
+    Review                Review[]
+}
+
+model SubjectRecommendation {
+    id        Int     @id @default(autoincrement())
+    subject   Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+    major     Major   @relation(fields: [majorId], references: [id], onDelete: Cascade)
+    subjectId Int
+    majorId   Int
+    semester  Int
+}
+
+model Review {
+    id                 Int     @id @default(autoincrement())
+    subject            Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+    description        String  @db.Text
+    challenge          String? @db.Text
+    advice             String? @db.Text
+    lecturer           String? @db.VarChar(255)
+    rateMaterial       Int?    @db.SmallInt
+    rateAssignment     Int?    @db.SmallInt
+    rateRecommendation Int?    @db.SmallInt
+    voteCount          Int     @default(0)
+    subjectId          Int
 }
