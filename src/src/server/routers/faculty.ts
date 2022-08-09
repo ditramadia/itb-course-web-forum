@@ -23,8 +23,8 @@ export const facultyRouter = trpc
   .mutation('updateOne', {
     input: z.object({
       id: z.number(),
-      name: z.string(),
-      acronym: z.string(),
+      name: z.string().optional(),
+      acronym: z.string().optional(),
     }),
     resolve: async ({ input, ctx }) => {
       const { id, ...rest } = input
