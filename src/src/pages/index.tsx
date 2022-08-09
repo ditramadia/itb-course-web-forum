@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import Header from '@/components/organism/Header'
 import Navbar from '@/components/organism/Navbar'
+import Search from '@/components/organism/Search'
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
 
       <Navbar />
       <Header />
+      <Search />
     </>
   )
 }

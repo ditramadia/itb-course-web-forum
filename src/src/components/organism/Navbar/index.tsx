@@ -18,22 +18,24 @@ export default function Navbar() {
 
   return (
     <nav>
-      <div className="nav-wrapper">
-        <Link href="/">
-          <div className="logo-container">
-            <div id="logo"></div>
+      <div className="nav-container">
+        <div className="nav-wrapper">
+          <Link href="/">
+            <div className="logo-container">
+              <div id="logo"></div>
+            </div>
+          </Link>
+          <div className="items-wrapper">
+            <Item destination="help" href="/help" />
+            <Item destination="about" href="/about" />
           </div>
-        </Link>
-        <div className="items-wrapper">
-          <Item destination="help" href="/help" />
-          <Item destination="about" href="/about" />
-        </div>
 
-        {/* Mobile */}
-        <div className={classHamburger} onClick={() => setActive(!active)}>
-          <span></span>
-          <span></span>
-          <span></span>
+          {/* Mobile */}
+          <div className={classHamburger} onClick={() => setActive(!active)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
 
