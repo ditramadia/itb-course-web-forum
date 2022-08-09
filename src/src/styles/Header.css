@@ -1,0 +1,48 @@
+header {
+  width: 90%;
+  height: fit-content;
+  margin: 50px auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+header h1 {
+  color: var(--color-black);
+  font-size: 2.8rem;
+}
+
+header h1 span {
+  color: var(--color-main);
+}
+
+header h2 {
+  font-weight: 400;
+  color: var(--color-black);
+
+  margin-top: -8px;
+}
+
+@media screen and (min-width: 672px) {
+}
+@media screen and (min-width: 1024px) {
+  header h1 {
+    font-size: 3.6rem;
+  }
+
+  header h2 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 672px) {
+  header h1 {
+    font-size: 4.2rem;
+  }
+
+  header h2 {
+    font-size: 2.2rem;
+  }
+}

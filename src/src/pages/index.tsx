@@ -1,6 +1,8 @@
-import Navbar from '@/components/organism/Navbar'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
+import Header from '@/components/organism/Header'
+import Navbar from '@/components/organism/Navbar'
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Navbar />
+      <Header />
     </>
   )
 }
