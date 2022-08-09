@@ -5,6 +5,7 @@ import { ServerRouter } from '@/server/router'
 import '@/styles/globals.css'
 import '@/styles/Navbar.css'
 import '@/styles/Header.css'
+import '@/styles/Search.css'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />

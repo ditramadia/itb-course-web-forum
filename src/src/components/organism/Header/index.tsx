@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header>
       <h1>
-        <span>CARI</span> KELAS
+        CARI<span>KELAS</span>
       </h1>
       <h2>Yuk cari kelasmu sekarang!</h2>
     </header>
