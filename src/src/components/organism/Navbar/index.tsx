@@ -1,20 +1,20 @@
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import cx from "classnames";
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import cx from 'classnames'
 
-import Item from "./Item";
+import Item from './Item'
 
 export default function Navbar() {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false)
   const classHamburger = cx({
     hamburger: true,
     active,
-  });
+  })
   const classMobileMenu = cx({
-    "nav-mobile-items-wrapper": true,
+    'nav-mobile-items-wrapper': true,
     active,
-  });
+  })
 
   return (
     <nav>
@@ -42,5 +42,5 @@ export default function Navbar() {
         <Item destination="about" href="/about" />
       </div>
     </nav>
-  );
+  )
 }

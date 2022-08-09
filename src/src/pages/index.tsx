@@ -1,7 +1,6 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-
-import Navbar from "../components/organism/Navbar";
+import Navbar from '@/components/organism/Navbar'
+import type { NextPage } from 'next'
+import Head from 'next/head'
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +16,7 @@ const Home: NextPage = () => {
 
       <Navbar />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

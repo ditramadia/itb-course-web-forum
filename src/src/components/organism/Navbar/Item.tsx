@@ -1,13 +1,13 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
 
 export interface ItemProps {
-  destination: string;
-  href: string;
+  destination: string
+  href: string
 }
 
 export default function Item(props: ItemProps) {
-  const { destination, href } = props;
+  const { destination, href } = props
 
   return (
     <Link href={href}>
@@ -15,5 +15,5 @@ export default function Item(props: ItemProps) {
         <a>{destination}</a>
       </div>
     </Link>
-  );
+  )
 }
