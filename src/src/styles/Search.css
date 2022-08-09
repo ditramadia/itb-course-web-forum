@@ -13,7 +13,7 @@
 
 #keyword-input,
 #major-input,
-#semester-input {
+#category-input {
   width: 100%;
   border-radius: 10px;
   border: 1px solid var(--color-black);
@@ -59,7 +59,7 @@
   }
 
   #major-input,
-  #semester-input {
+  #category-input {
     border-radius: 0;
   }
 

@@ -11,14 +11,10 @@ export default function Search() {
             placeholder="Masukkan kata kunci"
           />
           <input id="major-input" type="text" placeholder="Jurusan" />
-          <select name="semester" id="semester-input" placeholder="Semester">
-            <option value="Semester 1">Semester</option>
-            <option value="Semester 1">Semester 1</option>
-            <option value="Semester 2">Semester 2</option>
-            <option value="Semester 3">Semester 3</option>
-            <option value="Semester 4">Semester 4</option>
-            <option value="Semester 5">Semester 5</option>
-            <option value="Semester 6">Semester 6</option>
+          <select name="category" id="category-input" placeholder="Kategori">
+            <option value="Semester 1">Semua</option>
+            <option value="Semester 1">Matkul Wajib</option>
+            <option value="Semester 3">Matkul Pilihan</option>
           </select>
           <button type="submit">Search</button>
         </div>
