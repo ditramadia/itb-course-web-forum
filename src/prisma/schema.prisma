@@ -36,6 +36,7 @@ enum SubjectType {
 
 model Subject {
     id          Int         @id @default(autoincrement())
+    code        String      @db.VarChar(255)
     name        String      @db.VarChar(255)
     description String      @db.Text
     credits     Int         @db.SmallInt

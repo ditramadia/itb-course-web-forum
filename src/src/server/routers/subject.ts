@@ -30,9 +30,32 @@ export const subjectRouter = trpc
       })
     },
   })
+  .query('search', {
+    input: z.object({
+      keyword: z.string().optional(),
+      majorId: z.number().optional(),
+      subjectType: z.nativeEnum(SubjectType).optional(),
+    }),
+    resolve: async ({ input, ctx }) => {
+      const { keyword, ...rest } = input
+      return await ctx.prisma.subject.findMany({
+        where: {
+          ...rest,
+          name: {
+            contains: keyword,
+          },
+        },
+        include: {
+          major: true,
+          reviews: true,
+        },
+      })
+    },
+  })
   .mutation('insertOne', {
     input: z.object({
       name: z.string(),
+      code: z.string(),
       description: z.string(),
       credits: z.number(),
       type: z.nativeEnum(SubjectType),
@@ -48,6 +71,7 @@ export const subjectRouter = trpc
   .mutation('updateOne', {
     input: z.object({
       id: z.number(),
+      code: z.string().optional(),
       name: z.string().optional(),
       description: z.string().optional(),
       credits: z.number().optional(),
