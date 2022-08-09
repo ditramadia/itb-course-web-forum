@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react'
 import { trpc } from '@/utils/trpc'
+import { GroceryList } from '@prisma/client'
 
 const TrpcExample = () => {
   const [itemName, setItemName] = useState<string>('')
@@ -36,7 +37,7 @@ const TrpcExample = () => {
   }, [list, deleteAllMutation])
 
   const updateOne = useCallback(
-    (item) => {
+    (item: GroceryList) => {
       updateOneMutation.mutate({
         ...item,
         checked: !item.checked,
