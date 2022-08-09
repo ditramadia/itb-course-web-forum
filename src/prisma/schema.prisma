@@ -24,7 +24,7 @@ model Major {
     code                  Int                     @db.SmallInt
     name                  String                  @db.VarChar(255)
     acronym               String                  @db.VarChar(10)
-    faculty               Faculty                 @relation(fields: [facultyId], references: [id])
+    faculty               Faculty                 @relation(fields: [facultyId], references: [id], onDelete: Cascade)
     facultyId             Int
     SubjectRecommendation SubjectRecommendation[]
     Subject               Subject[]
@@ -41,7 +41,7 @@ model Subject {
     description           String                  @db.Text
     credits               Int                     @db.SmallInt
     type                  SubjectType             @default(COMPULSORY)
-    major                 Major                   @relation(fields: [majorId], references: [id])
+    major                 Major                   @relation(fields: [majorId], references: [id], onDelete: Cascade)
     SubjectRecommendation SubjectRecommendation[]
     majorId               Int
     Review                Review[]
@@ -49,8 +49,8 @@ model Subject {
 
 model SubjectRecommendation {
     id        Int     @id @default(autoincrement())
-    subject   Subject @relation(fields: [subjectId], references: [id])
-    major     Major   @relation(fields: [majorId], references: [id])
+    subject   Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+    major     Major   @relation(fields: [majorId], references: [id], onDelete: Cascade)
     subjectId Int
     majorId   Int
     semester  Int
@@ -58,7 +58,7 @@ model SubjectRecommendation {
 
 model Review {
     id                 Int     @id @default(autoincrement())
-    subject            Subject @relation(fields: [subjectId], references: [id])
+    subject            Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
     description        String  @db.Text
     challenge          String? @db.Text
     advice             String? @db.Text
