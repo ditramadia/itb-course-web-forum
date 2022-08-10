@@ -1,6 +1,6 @@
 import { AppType } from 'next/dist/shared/lib/utils'
 import { withTRPC } from '@trpc/next'
-import { ServerRouter } from '@/server/router'
+import { serverRouter } from '@/server/router'
 
 import '@/styles/globals.css'
 import '@/styles/Navbar.css'
@@ -16,7 +16,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
 }
 
-export default withTRPC<ServerRouter>({
+export default withTRPC<typeof serverRouter>({
   config() {
     const url = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/api/trpc`
