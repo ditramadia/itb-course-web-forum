@@ -1,0 +1,35 @@
+.feedback-wrapper {
+  background-color: red;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.feedback-wrapper h2 {
+  color: var(--color-black);
+}
+
+.feedback-wrapper .feedback-content {
+  width: 100%;
+}
+
+.feedback-wrapper .feedback-content .col-mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-wrapper .feedback-content .col-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-wrapper .feedback-content .col-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 672px) {
+  .feedback-wrapper {
+    width: 80%;
+    margin: 46px auto;
+  }
+}

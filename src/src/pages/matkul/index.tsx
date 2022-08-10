@@ -1,4 +1,5 @@
 import DescRating from '@/components/organism/DescRating'
+import Feedback from '@/components/organism/Feedback'
 import Footer from '@/components/organism/Footer'
 import MatkulHeader from '@/components/organism/MatkulHeader'
 import Navbar from '@/components/organism/Navbar'
@@ -18,11 +19,14 @@ export default function Matkul() {
   }
 
   return (
-    <>
-      <Navbar />
-      <MatkulHeader {...matkulData} />
-      <DescRating {...matkulData} />
+    <div className="page-container">
+      <div className="page-wrapper">
+        <Navbar />
+        <MatkulHeader {...matkulData} />
+        <DescRating {...matkulData} />
+        <Feedback />
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }

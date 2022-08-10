@@ -13,6 +13,7 @@ import '@/styles/MatkulHeader.css'
 import '@/styles/DescRating.css'
 import '@/styles/PageHeader.css'
 import '@/styles/AboutContent.css'
+import '@/styles/Feedback.css'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
