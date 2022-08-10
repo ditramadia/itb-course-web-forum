@@ -5,7 +5,13 @@ import cx from 'classnames'
 
 import Item from './Item'
 
-export default function Navbar() {
+export interface NavbarProps {
+  currentPage?: 'help' | 'about'
+}
+
+export default function Navbar(props: NavbarProps) {
+  const { currentPage } = props
+
   const [active, setActive] = useState(false)
   const classHamburger = cx({
     hamburger: true,
@@ -26,8 +32,16 @@ export default function Navbar() {
             </div>
           </Link>
           <div className="items-wrapper">
-            <Item destination="help" href="/help" />
-            <Item destination="about" href="/about" />
+            <Item
+              destination="help"
+              href="/help"
+              active={currentPage === 'help'}
+            />
+            <Item
+              destination="about"
+              href="/about"
+              active={currentPage === 'about'}
+            />
           </div>
 
           {/* Mobile */}

@@ -12,6 +12,8 @@
 
   display: flex;
   flex-direction: column;
+
+  text-align: justify;
 }
 
 .desc-rating-wrapper .description-container h2 {

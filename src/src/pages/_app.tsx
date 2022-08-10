@@ -11,6 +11,8 @@ import '@/styles/MatkulCard.css'
 import '@/styles/Footer.css'
 import '@/styles/MatkulHeader.css'
 import '@/styles/DescRating.css'
+import '@/styles/PageHeader.css'
+import '@/styles/AboutContent.css'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
