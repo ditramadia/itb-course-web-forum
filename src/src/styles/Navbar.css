@@ -61,6 +61,10 @@ nav .nav-wrapper .items-wrapper .item a {
   cursor: pointer;
 }
 
+nav .nav-wrapper .items-wrapper .item.active a {
+  color: var(--color-main);
+}
+
 nav .nav-wrapper .items-wrapper .item a:hover {
   color: var(--color-main);
 }
@@ -137,7 +141,7 @@ nav .nav-mobile-items-wrapper .item:active {
 }
 
 nav .nav-mobile-items-wrapper .item a {
-  font-size: 1.2rem;
+  color: var(--color-main);
 }
 
 @media screen and (max-width: 672px) {

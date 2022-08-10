@@ -10,20 +10,24 @@ import Footer from '@/components/organism/Footer'
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>CariKelas | Home</title>
-        <meta
-          name="description"
-          content="CariKelas pusat informasi mengenai mata kuliah ITB"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <div className="page-container">
+        <div className="page-wrapper">
+          <Head>
+            <title>CariKelas | Home</title>
+            <meta
+              name="description"
+              content="CariKelas pusat informasi mengenai mata kuliah ITB"
+            />
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
 
-      <Navbar />
-      <Header />
-      <Search />
-      <Result />
-      <Footer />
+          <Navbar />
+          <Header />
+          <Search />
+          <Result />
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }
