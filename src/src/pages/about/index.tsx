@@ -8,10 +8,14 @@ import AboutContent from '@/components/organism/AboutContent.tsx'
 export default function About() {
   return (
     <>
-      <Navbar currentPage="about" />
-      <PageHeader title="About" subtitle="Apa itu CariKelas?" />
-      <AboutContent />
-      <Footer />
+      <div className="page-container">
+        <div className="page-wrapper">
+          <Navbar currentPage="about" />
+          <PageHeader title="About" subtitle="Apa itu CariKelas?" />
+          <AboutContent />
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }
