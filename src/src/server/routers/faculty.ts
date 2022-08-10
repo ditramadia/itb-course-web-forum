@@ -6,7 +6,11 @@ export const facultyRouter = trpc
   .router<Context>()
   .query('findAll', {
     resolve: async ({ ctx }) => {
-      return await ctx.prisma.faculty.findMany()
+      return await ctx.prisma.faculty.findMany({
+        include: {
+          majors: true,
+        },
+      })
     },
   })
   .mutation('insertOne', {

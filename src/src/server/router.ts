@@ -7,7 +7,7 @@ import { subjectRouter } from './routers/subject'
 
 export const serverRouter = trpc
   .router<Context>()
-  .merge('faculty', facultyRouter)
-  .merge('major', majorRouter)
-  .merge('review', reviewRouter)
-  .merge('subject', subjectRouter)
+  .merge('faculty.', facultyRouter)
+  .merge('major.', majorRouter)
+  .merge('review.', reviewRouter)
+  .merge('subject.', subjectRouter)
