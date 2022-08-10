@@ -1,0 +1,26 @@
+.matkul-header-wrapper {
+  width: 90%;
+  margin: 30px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.matkul-header-wrapper h1 {
+  color: var(--color-black);
+}
+
+.matkul-header-wrapper .header-detail {
+  color: #9c9c9c;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 672px) {
+  .matkul-header-wrapper {
+    width: 80%;
+    margin: 48px auto;
+  }
+}

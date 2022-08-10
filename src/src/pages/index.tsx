@@ -5,6 +5,7 @@ import Header from '@/components/organism/Header'
 import Navbar from '@/components/organism/Navbar'
 import Search from '@/components/organism/Search'
 import Result from '@/components/organism/Result'
+import Footer from '@/components/organism/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
       <Header />
       <Search />
       <Result />
+      <Footer />
     </>
   )
 }

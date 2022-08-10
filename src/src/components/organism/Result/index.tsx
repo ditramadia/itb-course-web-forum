@@ -1,4 +1,4 @@
-import Card from '@/components/molecule/Card'
+import MatkulCard from '@/components/molecule/MatkulCard'
 import React from 'react'
 
 export default function Result() {
@@ -26,12 +26,24 @@ export default function Result() {
       recommendation: 3,
     },
   ]
+
+  if (matkulData.length === 0) {
+    return (
+      <div className="result-container">
+        <p className="title">Hasil Pencarian</p>
+        <div className="result-wrapper">
+          <p id="empty-message">Tidak ada data</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="result-container">
-      <h2>Hasil Pencarian</h2>
+      <p className="title">Hasil Pencarian</p>
       <div className="result-wrapper">
         {matkulData.map((matkul) => (
-          <Card {...matkul} />
+          <MatkulCard {...matkul} />
         ))}
       </div>
     </div>

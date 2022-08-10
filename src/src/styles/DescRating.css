@@ -1,0 +1,116 @@
+.desc-rating-wrapper {
+  width: 90%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.desc-rating-wrapper .description-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-rating-wrapper .description-container h2 {
+  color: var(--color-black);
+}
+
+.desc-rating-wrapper .description-container p {
+  color: #9c9c9c;
+}
+
+.desc-rating-wrapper .rating-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-rating-wrapper .rating-container h2 {
+  color: var(--color-black);
+}
+
+.desc-rating-wrapper .rating-container .rating-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-rating-wrapper
+  .rating-container
+  .rating-detail-container
+  .rating-detail-wrapper {
+  width: 100%;
+  margin-bottom: 4px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc-rating-wrapper
+  .rating-container
+  .rating-detail-container
+  .rating-detail-wrapper
+  p {
+  color: #9c9c9c;
+}
+.desc-rating-wrapper
+  .rating-container
+  .rating-detail-container
+  .rating-detail-wrapper
+  .rating-number-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.desc-rating-wrapper
+  .rating-container
+  .rating-detail-container
+  .rating-detail-wrapper
+  .rating-number-wrapper
+  .star {
+  background-color: yellow;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 672px) {
+  .desc-rating-wrapper {
+    width: 80%;
+
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .desc-rating-wrapper .description-container {
+    width: 65%;
+  }
+
+  .desc-rating-wrapper .rating-container {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .desc-rating-wrapper .description-container {
+    width: 70%;
+  }
+
+  .desc-rating-wrapper .rating-container {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 1296px) {
+  .desc-rating-wrapper .description-container {
+    width: 75%;
+  }
+
+  .desc-rating-wrapper .rating-container {
+    width: 20%;
+  }
+}

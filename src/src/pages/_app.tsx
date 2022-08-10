@@ -6,6 +6,11 @@ import '@/styles/globals.css'
 import '@/styles/Navbar.css'
 import '@/styles/Header.css'
 import '@/styles/Search.css'
+import '@/styles/Result.css'
+import '@/styles/MatkulCard.css'
+import '@/styles/Footer.css'
+import '@/styles/MatkulHeader.css'
+import '@/styles/DescRating.css'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />

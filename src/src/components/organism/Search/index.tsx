@@ -12,6 +12,7 @@ export default function Search() {
           />
           {/* <input id="major-input" type="text" placeholder="Jurusan" /> */}
           <select name="major" id="major-input" placeholder="Jurusan">
+            <option value="">Jurusan</option>
             <option value="All">Semua</option>
             <option value="Teknik Informatika">Teknik Informatika</option>
             <option value="Sistem Teknologi Informasi">
@@ -23,6 +24,7 @@ export default function Search() {
             <option value="Teknik Biomedis">Teknik Biomedis</option>
           </select>
           <select name="category" id="category-input" placeholder="Kategori">
+            <option value="">Kategori</option>
             <option value="All">Semua</option>
             <option value="Matkul Wajib">Matkul Wajib</option>
             <option value="Matkul Pilihan">Matkul Pilihan</option>
