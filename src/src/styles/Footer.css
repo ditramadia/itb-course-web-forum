@@ -9,3 +9,7 @@ footer {
 
   z-index: 100;
 }
+
+footer p {
+  color: #9c9c9c;
+}
