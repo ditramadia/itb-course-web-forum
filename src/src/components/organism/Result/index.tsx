@@ -1,33 +1,19 @@
 import MatkulCard from '@/components/molecule/MatkulCard'
+import { InferQueryOutput } from '@/utils/trpc'
 import React from 'react'
 
-export default function Result() {
-  const matkulData = [
-    {
-      id: '1',
-      code: 'IF2110',
-      name: 'Algoritma dan Struktur Data',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ex enim, luctus vehicula ex et, aliquet laoreet elit. Vivamus a.',
-      category: 'Matkul Wajib',
-      semester: '3',
-      material: 5,
-      assignments: 5,
-      recommendation: 5,
-    },
-    {
-      id: '2',
-      code: 'IF2121',
-      name: 'Logika Komputasional',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ex enim, luctus vehicula ex et, aliquet laoreet elit. Vivamus a.',
-      category: 'Matkul Wajib',
-      semester: '3',
-      material: 4,
-      assignments: 4,
-      recommendation: 3,
-    },
-  ]
+interface Props {
+  data: InferQueryOutput<'subject.search'> | undefined
+}
 
-  if (matkulData.length === 0) {
+export default function Result({ data }: Props) {
+  if (data === undefined) {
+    return (
+      <div className="result-container">
+        <p className="title">Belum ada hasil</p>
+      </div>
+    )
+  } else if (data.length === 0) {
     return (
       <div className="result-container">
         <p className="title">Hasil Pencarian</p>
@@ -40,10 +26,10 @@ export default function Result() {
 
   return (
     <div className="result-container">
-      <p className="title">Hasil Pencarian</p>
+      <p className="title">Hasil Pencarian ({data.length} hasil)</p>
       <div className="result-wrapper">
-        {matkulData.map((matkul) => (
-          <MatkulCard {...matkul} />
+        {data.map((subject) => (
+          <MatkulCard {...subject} key={`result-${subject.id}`} />
         ))}
       </div>
     </div>
