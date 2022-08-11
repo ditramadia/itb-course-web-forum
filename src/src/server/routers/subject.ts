@@ -19,7 +19,7 @@ export const subjectRouter = trpc
       id: z.number(),
     }),
     resolve: async ({ input, ctx }) => {
-      return await ctx.prisma.subject.findFirst({
+      const subject = await ctx.prisma.subject.findFirst({
         where: {
           id: input.id,
         },
@@ -28,6 +28,49 @@ export const subjectRouter = trpc
           reviews: true,
         },
       })
+
+      if (!subject) {
+        return undefined
+      }
+
+      const assignmentNNull = subject.reviews.filter(
+        (review) => review.rateAssignment !== null,
+      )
+      const assginmentSum = assignmentNNull
+        .map((review) => review.rateAssignment!)
+        .reduce((total, next) => total + next, 0)
+
+      const materialNNull = subject.reviews.filter(
+        (review) => review.rateMaterial !== null,
+      )
+      const materialSum = materialNNull
+        .map((review) => review.rateMaterial!)
+        .reduce((total, next) => total + next, 0)
+
+      const recommendationNNull = subject.reviews.filter(
+        (review) => review.rateRecommendation !== null,
+      )
+      const recommendationSum = recommendationNNull
+        .map((review) => review.rateRecommendation!)
+        .reduce((total, next) => total + next, 0)
+
+      return {
+        ...subject,
+        rateSummary: {
+          assignment: {
+            sum: assginmentSum,
+            count: assignmentNNull.length,
+          },
+          material: {
+            sum: materialSum,
+            count: materialNNull.length,
+          },
+          recommendation: {
+            sum: recommendationSum,
+            count: recommendationNNull.length,
+          },
+        },
+      }
     },
   })
   .query('search', {

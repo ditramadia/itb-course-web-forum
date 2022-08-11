@@ -15,7 +15,7 @@ export default function MatkulCard({
   rateSummary,
 }: InferQueryOutput<'subject.search'>[number]) {
   return (
-    <Link href="/matkul">
+    <Link href={`/matkul/${id}`}>
       <div className="card-wrapper">
         <div className="card-detail">
           <h3>

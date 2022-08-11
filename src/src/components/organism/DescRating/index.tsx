@@ -1,20 +1,15 @@
+import { InferQueryOutput } from '@/utils/trpc'
 import React from 'react'
 
-export interface DescRatingProps {
-  desc: string
-  material: number
-  assignment: number
-  recommendation: number
-}
-
-export default function DescRating(props: DescRatingProps) {
-  const { desc, material, assignment, recommendation } = props
-
+export default function DescRating({
+  description,
+  rateSummary,
+}: NonNullable<InferQueryOutput<'subject.findOne'>>) {
   return (
     <div className="desc-rating-wrapper">
       <div className="description-container">
         <h2>Deskripsi</h2>
-        <p>{desc}</p>
+        <p>{description}</p>
       </div>
 
       <div className="rating-container">
@@ -25,7 +20,13 @@ export default function DescRating(props: DescRatingProps) {
             <p>Materi</p>
             <div className="rating-number-wrapper">
               <div className="star"></div>
-              <p>{material}</p>
+              <p>
+                {rateSummary.material.count === 0
+                  ? '-'
+                  : `${(
+                      rateSummary.material.sum / rateSummary.material.count
+                    ).toFixed(2)} (${rateSummary.material.count})`}
+              </p>
             </div>
           </div>
 
@@ -33,7 +34,13 @@ export default function DescRating(props: DescRatingProps) {
             <p>Tugas & Ujian</p>
             <div className="rating-number-wrapper">
               <div className="star"></div>
-              <p>{assignment}</p>
+              <p>
+                {rateSummary.assignment.count === 0
+                  ? '-'
+                  : `${(
+                      rateSummary.assignment.sum / rateSummary.assignment.count
+                    ).toFixed(2)} (${rateSummary.assignment.count})`}
+              </p>
             </div>
           </div>
 
@@ -41,7 +48,14 @@ export default function DescRating(props: DescRatingProps) {
             <p>Rekomendasi</p>
             <div className="rating-number-wrapper">
               <div className="star"></div>
-              <p>{recommendation}</p>
+              <p>
+                {rateSummary.recommendation.count === 0
+                  ? '-'
+                  : `${(
+                      rateSummary.recommendation.sum /
+                      rateSummary.recommendation.count
+                    ).toFixed(2)} (${rateSummary.recommendation.count})`}
+              </p>
             </div>
           </div>
         </div>
