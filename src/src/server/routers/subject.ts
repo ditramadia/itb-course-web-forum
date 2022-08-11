@@ -34,21 +34,67 @@ export const subjectRouter = trpc
     input: z.object({
       keyword: z.string().optional(),
       majorId: z.number().optional(),
-      subjectType: z.nativeEnum(SubjectType).optional(),
+      type: z.nativeEnum(SubjectType).optional(),
     }),
     resolve: async ({ input, ctx }) => {
       const { keyword, ...rest } = input
-      return await ctx.prisma.subject.findMany({
-        where: {
-          ...rest,
-          name: {
-            contains: keyword,
+      return (
+        await ctx.prisma.subject.findMany({
+          where: {
+            ...rest,
+            name: {
+              contains: keyword,
+            },
           },
-        },
-        include: {
-          major: true,
-          reviews: true,
-        },
+          include: {
+            reviews: {
+              select: {
+                rateAssignment: true,
+                rateMaterial: true,
+                rateRecommendation: true,
+              },
+            },
+          },
+        })
+      ).map((subject) => {
+        const assignmentNNull = subject.reviews.filter(
+          (review) => review.rateAssignment !== null,
+        )
+        const assginmentSum = assignmentNNull
+          .map((review) => review.rateAssignment!)
+          .reduce((total, next) => total + next, 0)
+
+        const materialNNull = subject.reviews.filter(
+          (review) => review.rateMaterial !== null,
+        )
+        const materialSum = materialNNull
+          .map((review) => review.rateMaterial!)
+          .reduce((total, next) => total + next, 0)
+
+        const recommendationNNull = subject.reviews.filter(
+          (review) => review.rateRecommendation !== null,
+        )
+        const recommendationSum = recommendationNNull
+          .map((review) => review.rateRecommendation!)
+          .reduce((total, next) => total + next, 0)
+
+        return {
+          ...subject,
+          rateSummary: {
+            assignment: {
+              sum: assginmentSum,
+              count: assignmentNNull.length,
+            },
+            material: {
+              sum: materialSum,
+              count: materialNNull.length,
+            },
+            recommendation: {
+              sum: recommendationSum,
+              count: recommendationNNull.length,
+            },
+          },
+        }
       })
     },
   })
@@ -97,27 +143,6 @@ export const subjectRouter = trpc
       return await ctx.prisma.subject.delete({
         where: {
           id: input.id,
-        },
-      })
-    },
-  })
-  .mutation('incrementVote', {
-    input: z.object({
-      id: z.number(),
-    }),
-    resolve: async ({ input, ctx }) => {
-      const currentReview = await ctx.prisma.review.findFirstOrThrow({
-        where: {
-          id: input.id,
-        },
-      })
-
-      return await ctx.prisma.review.update({
-        where: {
-          id: input.id,
-        },
-        data: {
-          voteCount: currentReview.voteCount + 1,
         },
       })
     },
