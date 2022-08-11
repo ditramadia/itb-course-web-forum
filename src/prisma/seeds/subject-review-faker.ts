@@ -26,11 +26,21 @@ const generateFakeSubject = (major: Major) => {
   }
 
   return {
-    code: `${major.code}`.concat(
-      faker.random.numeric(4, {
-        allowLeadingZeros: false,
-      }),
-    ),
+    code:
+      major.acronym.length === 2
+        ? major.acronym.concat(
+            faker.random.numeric(4, {
+              allowLeadingZeros: false,
+            }),
+          )
+        : faker.lorem
+            .word(2)
+            .toUpperCase()
+            .concat(
+              faker.random.numeric(4, {
+                allowLeadingZeros: false,
+              }),
+            ),
     name: titleCase(faker.lorem.words()),
     description: faker.lorem.paragraph(),
     credits: getRandomInteger(2, 4),

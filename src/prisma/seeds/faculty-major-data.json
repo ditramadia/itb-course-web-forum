@@ -1,17 +1,403 @@
 [
   {
+    "name": "Fakultas Matematika dan Ilmu Pengetahuan Alam",
+    "acronym": "FMIPA",
+    "majors": [
+      {
+        "code": 101,
+        "name": "Matematika",
+        "acronym": "MA"
+      },
+      {
+        "code": 102,
+        "name": "Fisika",
+        "acronym": "FI"
+      },
+      {
+        "code": 103,
+        "name": "Astronomi",
+        "acronym": "AS"
+      },
+      {
+        "code": 105,
+        "name": "Kimia",
+        "acronym": "KI"
+      },
+      {
+        "code": 108,
+        "name": "Aktuaria",
+        "acronym": "AK"
+      },
+      {
+        "code": 160,
+        "name": "Tahap Tahun Pertama FMIPA",
+        "acronym": "TPB-FMIPA"
+      }
+    ]
+  },
+  {
+    "name": "Sekolah Ilmu dan Teknologi Hayati",
+    "acronym": "SITH",
+    "majors": [
+      {
+        "code": 104,
+        "name": "Mikrobiologi",
+        "acronym": "BM"
+      },
+      {
+        "code": 106,
+        "name": "Biologi",
+        "acronym": "BI"
+      },
+      {
+        "code": 112,
+        "name": "Rekayasa Hayati",
+        "acronym": "BE"
+      },
+      {
+        "code": 114,
+        "name": "Rekayasa Pertanian",
+        "acronym": "BA"
+      },
+      {
+        "code": 115,
+        "name": "Rekayasa Kehutanan",
+        "acronym": "BW"
+      },
+      {
+        "code": 119,
+        "name": "Teknologi Pasca Panen",
+        "acronym": "PP"
+      },
+      {
+        "code": 161,
+        "name": "Tahap Tahun Pertama SITH - Program Sains",
+        "acronym": "TPB-SITH-S"
+      },
+      {
+        "code": 161,
+        "name": "Tahap Tahun Pertama SITH - Program Sains",
+        "acronym": "TPB-SITH-S"
+      },
+      {
+        "code": 198,
+        "name": "Tahap Tahun Pertama SITH - Program Rekayasa",
+        "acronym": "TPB-SITH-R"
+      }
+    ]
+  },
+  {
+    "name": "Sekolah Farmasi",
+    "acronym": "SF",
+    "majors": [
+      {
+        "code": 107,
+        "name": "Sains dan Teknologi Farmasi",
+        "acronym": "FA"
+      },
+      {
+        "code": 116,
+        "name": "Farmasi Klinik dan Komunitas",
+        "acronym": "FK"
+      },
+      {
+        "code": 162,
+        "name": "Tahap Tahun Pertama SF",
+        "acronym": "TPB-SF"
+      }
+    ]
+  },
+  {
+    "name": "Fakultas Teknik Pertambangan dan Minyak",
+    "acronym": "FTTM",
+    "majors": [
+      {
+        "code": 121,
+        "name": "Teknik Pertambangan",
+        "acronym": "TA"
+      },
+      {
+        "code": 122,
+        "name": "Teknik Perminyakan",
+        "acronym": "TM"
+      },
+      {
+        "code": 123,
+        "name": "Teknik Geofisika",
+        "acronym": "TG"
+      },
+      {
+        "code": 125,
+        "name": "Teknik Metalurgi",
+        "acronym": "MG"
+      },
+      {
+        "code": 164,
+        "name": "Tahap Tahun Pertama FTTM",
+        "acronym": "TPB-FTTM"
+      }
+    ]
+  },
+  {
+    "name": "Fakultas Ilmu dan Teknologi Kebumian",
+    "acronym": "FITB",
+    "majors": [
+      {
+        "code": 120,
+        "name": "Teknik Geologi",
+        "acronym": "GL"
+      },
+      {
+        "code": 128,
+        "name": "Meteorologi",
+        "acronym": "OS"
+      },
+      {
+        "code": 129,
+        "name": "Oseanografi",
+        "acronym": "GL"
+      },
+      {
+        "code": 151,
+        "name": "Teknik Geodesi dan Geomatika",
+        "acronym": "GD"
+      },
+      {
+        "code": 163,
+        "name": "Tahap Tahun Pertama FITB",
+        "acronym": "TPB-FITB"
+      }
+    ]
+  },
+  {
+    "name": "Fakultas Teknologi Industri",
+    "acronym": "FTI",
+    "majors": [
+      {
+        "code": 130,
+        "name": "Teknik Kimia",
+        "acronym": "TK"
+      },
+      {
+        "code": 133,
+        "name": "Teknik Fisika",
+        "acronym": "TF"
+      },
+      {
+        "code": 134,
+        "name": "Teknik Industri",
+        "acronym": "TI"
+      },
+      {
+        "code": 143,
+        "name": "Teknik Pangan",
+        "acronym": "PG"
+      },
+      {
+        "code": 144,
+        "name": "Manajemen Rekayasa",
+        "acronym": "MR"
+      },
+      {
+        "code": 145,
+        "name": "Teknik Bioenergi dan Kemurgi",
+        "acronym": "TB"
+      },
+      {
+        "code": 167,
+        "name": "Tahap Tahun Pertama FTI",
+        "acronym": "TPB-FTI"
+      }
+    ]
+  },
+  {
     "name": "Sekolah Teknik Elektro dan Informatika",
     "acronym": "STEI",
     "majors": [
+      {
+        "code": 132,
+        "name": "Teknik Elektro",
+        "acronym": "EL"
+      },
       {
         "code": 135,
         "name": "Teknik Informatika",
         "acronym": "IF"
       },
       {
+        "code": 180,
+        "name": "Teknik Tenaga Listrik",
+        "acronym": "EP"
+      },
+      {
+        "code": 181,
+        "name": "Teknik Telekomunikasi",
+        "acronym": "ET"
+      },
+      {
         "code": 182,
         "name": "Sistem dan Teknologi Informasi",
+        "acronym": "II"
+      },
+      {
+        "code": 183,
+        "name": "Teknik Biomedis",
+        "acronym": "EB"
+      },
+      {
+        "code": 165,
+        "name": "Tahap Tahun Pertama STEI",
+        "acronym": "TPB-STEI"
+      }
+    ]
+  },
+  {
+    "name": "Fakultas Teknik Mesin dan Dirgantara",
+    "acronym": "FTMD",
+    "majors": [
+      {
+        "code": 131,
+        "name": "Teknik Mesin",
+        "acronym": "MS"
+      },
+      {
+        "code": 136,
+        "name": "Teknik Dirgantara",
+        "acronym": "AE"
+      },
+      {
+        "code": 137,
+        "name": "Teknik Material",
+        "acronym": "MT"
+      },
+      {
+        "code": 169,
+        "name": "Tahap Tahun Pertama FTMD",
+        "acronym": "TPB-FTMD"
+      }
+    ]
+  },
+  {
+    "name": "Fakultas Teknik Sipil dan Lingkungan",
+    "acronym": "FTSL",
+    "majors": [
+      {
+        "code": 150,
+        "name": "Teknik Sipil",
         "acronym": "SI"
+      },
+      {
+        "code": 153,
+        "name": "Teknik Lingkungan",
+        "acronym": "TL"
+      },
+      {
+        "code": 150,
+        "name": "Teknik Sipil",
+        "acronym": "SI"
+      },
+      {
+        "code": 155,
+        "name": "Teknik Kelautan",
+        "acronym": "KL"
+      },
+      {
+        "code": 157,
+        "name": "Rekayasa Infrastruktur Lingkungan",
+        "acronym": "IL"
+      },
+      {
+        "code": 158,
+        "name": "Teknik dan Pengelolaan Sumber Daya Air",
+        "acronym": "SA"
+      },
+      {
+        "code": 166,
+        "name": "Tahap Tahun Pertama FTSL",
+        "acronym": "TPB-FTSL"
+      }
+    ]
+  },
+  {
+    "name": "Sekolah Arsitektur, Perencanaan, dan Pengembangan Kebijakan",
+    "acronym": "SAPPK",
+    "majors": [
+      {
+        "code": 152,
+        "name": "Arsitektur",
+        "acronym": "AR"
+      },
+      {
+        "code": 154,
+        "name": "Perencanaan Wilayah dan Kota",
+        "acronym": "PL"
+      },
+      {
+        "code": 199,
+        "name": "Tahap Tahun Pertama SAPPK",
+        "acronym": "TPB-SAPPK"
+      }
+    ]
+  },
+  {
+    "name": "Fakultas Seni Rupa dan Desain",
+    "acronym": "FSRD",
+    "majors": [
+      {
+        "code": 168,
+        "name": "Tahap Tahun Pertama FSRD",
+        "acronym": "TPB-FSRD"
+      },
+      {
+        "code": 170,
+        "name": "Seni Rupa",
+        "acronym": "SR"
+      },
+      {
+        "code": 172,
+        "name": "Kriya",
+        "acronym": "KR"
+      },
+      {
+        "code": 173,
+        "name": "Desain Interior",
+        "acronym": "DI"
+      },
+      {
+        "code": 176,
+        "name": "Desain Komunikasi Visual",
+        "acronym": "DK"
+      },
+      {
+        "code": 175,
+        "name": "Desain Produk",
+        "acronym": "DP"
+      },
+      {
+        "code": 179,
+        "name": "Mata Kuliah Umum",
+        "acronym": "KU"
+      }
+    ]
+  },
+  {
+    "name": "Sekolah Bisnis dan Manajemen",
+    "acronym": "SBM",
+    "majors": [
+      {
+        "code": 190,
+        "name": "Manajemen",
+        "acronym": "MB"
+      },
+      {
+        "code": 192,
+        "name": "Kewirausahaan",
+        "acronym": "MK"
+      },
+      {
+        "code": 197,
+        "name": "Tahap Tahun Pertama SBM",
+        "acronym": "TPB-SBM"
       }
     ]
   }
