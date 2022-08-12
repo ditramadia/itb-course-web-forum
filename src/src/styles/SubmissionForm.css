@@ -85,6 +85,12 @@
   text-decoration: none;
 }
 
+@media screen and (min-width: 672px) {
+  .form-wrapper {
+    width: 80%;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .form-wrapper {
     margin: 60px auto;
