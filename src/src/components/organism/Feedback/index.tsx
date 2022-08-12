@@ -1,4 +1,6 @@
 import FeedbackCard from '@/components/molecule/FeedbackCard'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function Feedback() {
@@ -27,7 +29,19 @@ export default function Feedback() {
 
   return (
     <div className="feedback-wrapper">
-      <h2>Feedback</h2>
+      <div className="feedback-title">
+        <h2>Feedback</h2>
+        <Link href="/matkul/form">
+          <Image
+            className="add-icon"
+            width={30}
+            height={30}
+            src="/icon/ic-add.svg"
+            alt="add submission"
+          />
+        </Link>
+      </div>
+
       <div className="feedback-content">
         {feedbackData.map((feedback) => (
           <FeedbackCard
