@@ -1,7 +1,10 @@
 .feedback-wrapper {
-  background-color: red;
   width: 90%;
   margin: 10px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .feedback-wrapper h2 {
@@ -10,6 +13,10 @@
 
 .feedback-wrapper .feedback-content {
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .feedback-wrapper .feedback-content .col-mobile {

@@ -1,0 +1,68 @@
+.feedback-card {
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 10px;
+  border: 2px solid var(--color-black);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feedback-card .card-header {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback-card .card-header .header-footer,
+.feedback-card .card-footer .header-footer {
+  font-size: 1.2rem;
+  color: var(--color-black);
+}
+
+.feedback-card .card-material {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feedback-card .card-material .title,
+.feedback-card .card-assignment .title,
+.feedback-card .card-recommendation .title {
+  font-size: 1.2rem;
+  color: var(--color-black);
+}
+
+.feedback-card .card-material .para,
+.feedback-card .card-assignment .para,
+.feedback-card .card-recommendation .para {
+  font-size: 1rem;
+  color: #9c9c9c;
+}
+
+.feedback-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.feedback-card .card-footer .like-wrapper {
+  display: flex;
+  gap: 6px;
+}
+
+.feedback-card .card-footer .like-wrapper .like {
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-black);
+}
+
+@media screen and (min-width: 1024px) {
+  .feedback-card {
+    padding: 10px 20px;
+  }
+}

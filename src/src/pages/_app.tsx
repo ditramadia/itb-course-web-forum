@@ -14,6 +14,7 @@ import '@/styles/DescRating.css'
 import '@/styles/PageHeader.css'
 import '@/styles/AboutContent.css'
 import '@/styles/Feedback.css'
+import '@/styles/FeedbackCard.css'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
