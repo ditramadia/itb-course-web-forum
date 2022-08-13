@@ -6,8 +6,14 @@ import Navbar from '@/components/organism/Navbar'
 import Search from '@/components/organism/Search'
 import Result from '@/components/organism/Result'
 import Footer from '@/components/organism/Footer'
+import { useState } from 'react'
+import { InferQueryOutput } from '@/utils/trpc'
 
 const Home: NextPage = () => {
+  const [searchResult, setSearchResult] = useState<
+    InferQueryOutput<'subject.search'> | undefined
+  >(undefined)
+
   return (
     <>
       <div className="page-container">
@@ -23,8 +29,8 @@ const Home: NextPage = () => {
 
           <Navbar />
           <Header />
-          <Search />
-          <Result />
+          <Search onSearch={setSearchResult} />
+          <Result data={searchResult} />
         </div>
         <Footer />
       </div>

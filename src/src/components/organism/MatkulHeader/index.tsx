@@ -1,24 +1,27 @@
+import { InferQueryOutput } from '@/utils/trpc'
+import { SubjectType } from '@prisma/client'
 import React from 'react'
 
-export interface MatkulHeaderProps {
-  id: string
-  code: string
-  name: string
-  category: string
-  semester: string
-}
-
-export default function MatkulHeader(props: MatkulHeaderProps) {
-  const { id, code, name, category, semester } = props
-
+export default function MatkulHeader({
+  code,
+  name,
+  type,
+  semester,
+}: NonNullable<InferQueryOutput<'subject.findOne'>>) {
   return (
     <div className="matkul-header-wrapper">
       <h1>
         {code} - {name}
       </h1>
       <div className="header-detail">
-        <p>{category}</p>
-        <p>Semester {semester}</p>
+        {type && (
+          <p>
+            {type === SubjectType.COMPULSORY
+              ? 'Mata Kuliah Wajib'
+              : 'Mata Kuliah Pilihan'}
+          </p>
+        )}
+        {semester && <p>Semester {semester}</p>}
       </div>
     </div>
   )
