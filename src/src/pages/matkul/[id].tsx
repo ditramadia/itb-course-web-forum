@@ -27,7 +27,7 @@ export default function Matkul() {
         <Navbar />
         <MatkulHeader {...data} />
         <DescRating {...data} />
-        <Feedback />
+        <Feedback {...data} />
       </div>
       <Footer />
     </div>
