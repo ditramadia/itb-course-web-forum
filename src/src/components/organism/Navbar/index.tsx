@@ -30,8 +30,8 @@ export default function Navbar(props: NavbarProps) {
             <div className="logo-container">
               <Image
                 src="/image/logo.png"
-                width={1969 / 11}
-                height={328 / 11}
+                width={1969 / 12}
+                height={328 / 12}
                 alt="logo"
               />
             </div>
