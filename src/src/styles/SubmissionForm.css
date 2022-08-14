@@ -75,6 +75,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+.form-wrapper form .form-section.action button.error {
+  opacity: 50%;
+}
+
 .form-wrapper form .form-section.action button:hover {
   color: var(--color-main);
 }

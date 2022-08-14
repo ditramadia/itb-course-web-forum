@@ -6,28 +6,33 @@ import Navbar from '@/components/organism/Navbar'
 import { trpc } from '@/utils/trpc'
 import { useRouter } from 'next/router'
 import React from 'react'
-import DefaultErrorPage from 'next/error'
+import Error from 'next/error'
+import Custom404 from '../404'
 
 export default function Matkul() {
   const router = useRouter()
   const { id } = router.query
 
-  const { data } = trpc.useQuery([
+  const { data, isLoading } = trpc.useQuery([
     'subject.findOne',
     { id: parseInt(id as string) },
   ])
 
-  if (!data) {
-    return <DefaultErrorPage statusCode={404} />
+  if (!data && !isLoading) {
+    return <Custom404 />
   }
 
   return (
     <div className="page-container">
       <div className="page-wrapper">
         <Navbar />
-        <MatkulHeader {...data} />
-        <DescRating {...data} />
-        <Feedback />
+        {!isLoading && data && (
+          <>
+            <MatkulHeader {...data} />
+            <DescRating {...data} />
+            <Feedback {...data} />
+          </>
+        )}
       </div>
       <Footer />
     </div>
