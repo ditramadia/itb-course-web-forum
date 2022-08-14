@@ -49,6 +49,7 @@ model Subject {
 
 model Review {
     id                 Int     @id @default(autoincrement())
+    reviewer           String? @db.VarChar(255)
     subject            Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
     description        String  @db.Text
     challenge          String? @db.Text

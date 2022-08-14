@@ -18,6 +18,7 @@ export const reviewRouter = trpc
   })
   .mutation('insertOne', {
     input: z.object({
+      reviewer: z.string().optional(),
       description: z.string(),
       challenge: z.string().optional(),
       advice: z.string().optional(),
@@ -37,6 +38,7 @@ export const reviewRouter = trpc
   .mutation('updateOne', {
     input: z.object({
       id: z.number(),
+      reviewer: z.string().optional(),
       description: z.string().optional(),
       challenge: z.string().optional(),
       advice: z.string().optional(),

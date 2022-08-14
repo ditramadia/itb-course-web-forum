@@ -5,6 +5,7 @@ import { getRandomInteger } from '../../src/utils/random'
 
 const generateFakeReview = () => {
   return {
+    reviewer: faker.name.fullName(),
     description: faker.lorem.paragraph(5),
     challenge: Math.random() < 0.25 ? undefined : faker.lorem.paragraph(),
     advice: Math.random() < 0.25 ? undefined : faker.lorem.paragraph(),
@@ -19,7 +20,7 @@ const generateFakeReview = () => {
 
 const generateFakeSubject = (major: Major) => {
   const reviews: ReturnType<typeof generateFakeReview>[] = []
-  const reviewCount = getRandomInteger(0, 10)
+  const reviewCount = getRandomInteger(0, 5)
 
   for (let i = 0; i < reviewCount; i++) {
     reviews.push(generateFakeReview())
@@ -69,7 +70,7 @@ const seeder = async (prisma: PrismaClient) => {
     majors.map(async (major) => {
       const subjects: SubjectProps[] = []
 
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 5; i++) {
         subjectCounter++
         subjects.push({ majorId: major.id, ...generateFakeSubject(major) })
       }
