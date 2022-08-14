@@ -17,6 +17,7 @@ import '@/styles/Feedback.css'
 import '@/styles/FeedbackCard.css'
 import '@/styles/SubmissionForm.css'
 import '@/styles/404.css'
+import '@/styles/Help.css'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
