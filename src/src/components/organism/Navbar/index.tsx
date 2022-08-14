@@ -28,7 +28,12 @@ export default function Navbar(props: NavbarProps) {
         <div className="nav-wrapper">
           <Link href="/">
             <div className="logo-container">
-              <div id="logo"></div>
+              <Image
+                src="/image/logo.png"
+                width={1969 / 12}
+                height={328 / 12}
+                alt="logo"
+              />
             </div>
           </Link>
           <div className="items-wrapper">
