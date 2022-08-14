@@ -2,6 +2,8 @@ import { InferQueryOutput } from '@/utils/trpc'
 import { Subject, SubjectType } from '@prisma/client'
 import Link from 'next/link'
 import React from 'react'
+import { StarOutline } from '../Icons/StarOutline'
+import { StarSolid } from '../Icons/StarSolid'
 
 export default function MatkulCard({
   id,
@@ -38,7 +40,13 @@ export default function MatkulCard({
           <div className="rating-wrapper">
             <p>Materi</p>
             <div className="rate-wrapper">
-              <div className="dummy-star"></div>
+              <div className="dummy-star">
+                {rateSummary.material.count === 0 ? (
+                  <StarOutline />
+                ) : (
+                  <StarSolid />
+                )}
+              </div>
               <p className="number">
                 {rateSummary.material.count === 0
                   ? '-'
@@ -52,7 +60,13 @@ export default function MatkulCard({
           <div className="rating-wrapper">
             <p>Tugas & Ujian</p>
             <div className="rate-wrapper">
-              <div className="dummy-star"></div>
+              <div className="dummy-star">
+                {rateSummary.assignment.count === 0 ? (
+                  <StarOutline />
+                ) : (
+                  <StarSolid />
+                )}
+              </div>
               <p className="number">
                 {rateSummary.assignment.count === 0
                   ? '-'
@@ -66,7 +80,13 @@ export default function MatkulCard({
           <div className="rating-wrapper">
             <p>Rekomendasi</p>
             <div className="rate-wrapper">
-              <div className="dummy-star"></div>
+              <div className="dummy-star">
+                {rateSummary.recommendation.count === 0 ? (
+                  <StarOutline />
+                ) : (
+                  <StarSolid />
+                )}
+              </div>
               <p className="number">
                 {rateSummary.recommendation.count === 0
                   ? '-'

@@ -1,3 +1,5 @@
+import { StarOutline } from '@/components/molecule/Icons/StarOutline'
+import { StarSolid } from '@/components/molecule/Icons/StarSolid'
 import { InferQueryOutput } from '@/utils/trpc'
 import React from 'react'
 
@@ -19,7 +21,13 @@ export default function DescRating({
           <div className="rating-detail-wrapper">
             <p>Materi</p>
             <div className="rating-number-wrapper">
-              <div className="star"></div>
+              <div className="star">
+                {rateSummary.material.count === 0 ? (
+                  <StarOutline />
+                ) : (
+                  <StarSolid />
+                )}
+              </div>
               <p>
                 {rateSummary.material.count === 0
                   ? '-'
@@ -33,7 +41,13 @@ export default function DescRating({
           <div className="rating-detail-wrapper">
             <p>Tugas & Ujian</p>
             <div className="rating-number-wrapper">
-              <div className="star"></div>
+              <div className="star">
+                {rateSummary.assignment.count === 0 ? (
+                  <StarOutline />
+                ) : (
+                  <StarSolid />
+                )}
+              </div>
               <p>
                 {rateSummary.assignment.count === 0
                   ? '-'
@@ -47,7 +61,13 @@ export default function DescRating({
           <div className="rating-detail-wrapper">
             <p>Rekomendasi</p>
             <div className="rating-number-wrapper">
-              <div className="star"></div>
+              <div className="star">
+                {rateSummary.recommendation.count === 0 ? (
+                  <StarOutline />
+                ) : (
+                  <StarSolid />
+                )}
+              </div>
               <p>
                 {rateSummary.recommendation.count === 0
                   ? '-'
