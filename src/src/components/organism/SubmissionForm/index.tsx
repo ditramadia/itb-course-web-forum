@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function SubmissionForm() {
   return (
@@ -11,12 +11,14 @@ export default function SubmissionForm() {
       <form action="">
         <div className="form-section">
           <input
+            required
             type="text"
             className="dosen-name-input"
             name="dosen"
             placeholder="Nama Dosen Pengampu"
           />
           <input
+            required
             type="text"
             className="dosen-name-input"
             name="user"
