@@ -8,11 +8,7 @@ interface Props {
 
 export default function Result({ data }: Props) {
   if (data === undefined) {
-    return (
-      <div className="result-container">
-        <p className="title">Belum ada hasil</p>
-      </div>
-    )
+    return <div className="result-container"></div>
   } else if (data.length === 0) {
     return (
       <div className="result-container">

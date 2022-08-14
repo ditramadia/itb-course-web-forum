@@ -1,11 +1,32 @@
+import { trpc } from '@/utils/trpc'
 import { Review } from '@prisma/client'
-import React from 'react'
+import React, { useCallback, useState } from 'react'
+import { ArrowUp } from '../Icons/ArrowUp'
 
 export interface FeedbackCardProps {
   review: Review
 }
 
-export default function FeedbackCard({ review }: FeedbackCardProps) {
+export default function FeedbackCard({
+  review: sourceReview,
+}: FeedbackCardProps) {
+  const [voted, setVoted] = useState<boolean>(false)
+  const [review, setReview] = useState<Review>(sourceReview)
+  const voteMutation = trpc.useMutation(['review.incrementVote'])
+
+  const onVote = () => {
+    if (!voted) {
+      voteMutation.mutate({ id: review.id })
+      setReview((prev) => {
+        return {
+          ...prev,
+          voteCount: prev.voteCount + 1,
+        }
+      })
+      setVoted(true)
+    }
+  }
+
   return (
     <div className="feedback-card">
       <div className="card-header">
@@ -32,7 +53,9 @@ export default function FeedbackCard({ review }: FeedbackCardProps) {
 
       <div className="card-footer">
         <div className="like-wrapper">
-          <div className="like"></div>
+          <div className="like" onClick={onVote}>
+            <ArrowUp />
+          </div>
           <p className="header-footer">{review.voteCount}</p>
         </div>
 

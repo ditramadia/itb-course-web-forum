@@ -58,7 +58,10 @@
 .feedback-card .card-footer .like-wrapper .like {
   width: 28px;
   height: 28px;
-  background-color: var(--color-black);
+}
+
+.feedback-card .card-footer .like-wrapper .like:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1024px) {

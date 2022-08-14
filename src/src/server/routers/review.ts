@@ -16,6 +16,18 @@ export const reviewRouter = trpc
       })
     },
   })
+  .query('findOne', {
+    input: z.object({
+      id: z.number(),
+    }),
+    resolve: async ({ input, ctx }) => {
+      return await ctx.prisma.review.findFirst({
+        where: {
+          id: input.id,
+        },
+      })
+    },
+  })
   .mutation('insertOne', {
     input: z.object({
       reviewer: z.string().optional(),
