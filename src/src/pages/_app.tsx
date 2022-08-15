@@ -1,6 +1,7 @@
 import { AppType } from 'next/dist/shared/lib/utils'
 import { withTRPC } from '@trpc/next'
 import { serverRouter } from '@/server/router'
+import absoluteUrl from 'next-absolute-url'
 
 import '@/styles/globals.css'
 import '@/styles/Navbar.css'
@@ -18,7 +19,6 @@ import '@/styles/FeedbackCard.css'
 import '@/styles/SubmissionForm.css'
 import '@/styles/404.css'
 import '@/styles/Help.css'
-import absoluteUrl from 'next-absolute-url'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
@@ -30,7 +30,7 @@ export default withTRPC<typeof serverRouter>({
     if (process.env.VERCEL_URL) {
       host = process.env.VERCEL_URL as string
     } else if (ctx) {
-      host = absoluteUrl(ctx.req)['origin'].concat('/')
+      host = absoluteUrl(ctx.req)['origin']
     } else {
       host = ''
     }
