@@ -24,8 +24,17 @@ export default function Search({ onSearch }: Props) {
   })
 
   const { data, refetch } = trpc.useQuery(['subject.search', searchData], {
-    enabled: fetch,
+    enabled: false,
   })
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (fetch) {
+        refetch()
+      }
+    }, 500)
+    return () => clearTimeout(timeoutId)
+  }, [searchData, refetch, fetch])
 
   useEffect(() => {
     onSearch(data)
@@ -58,7 +67,6 @@ export default function Search({ onSearch }: Props) {
               })
             }
           />
-          {/* <input id="major-input" type="text" placeholder="Jurusan" /> */}
           <select
             name="major"
             id="major-input"

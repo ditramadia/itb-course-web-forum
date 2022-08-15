@@ -91,6 +91,7 @@ export const subjectRouter = trpc
             ...rest,
             name: {
               contains: keyword,
+              mode: 'insensitive',
             },
           },
           include: {
