@@ -3,7 +3,7 @@ import React from 'react'
 import Footer from '@/components/organism/Footer'
 import Navbar from '@/components/organism/Navbar'
 import PageHeader from '@/components/organism/PageHeader'
-import AboutContent from '@/components/organism/AboutContent.tsx'
+import AboutContent from '@/components/organism/AboutContent'
 
 export default function About() {
   return (

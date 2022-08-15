@@ -30,7 +30,7 @@ export default withTRPC<typeof serverRouter>({
     if (process.env.VERCEL_URL) {
       host = process.env.VERCEL_URL as string
     } else if (ctx) {
-      host = absoluteUrl(ctx.req)['origin'].concat('/')
+      host = absoluteUrl(ctx.req)['origin']
     } else {
       host = ''
     }

@@ -1,0 +1,18 @@
+.help-container {
+    width: 90%;
+    max-width: 860px;
+    margin: 0 auto;
+    margin-top: -26px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.help-container p {
+    color: #9c9c9c;
+}
+  
+@media screen and (min-width: 672px) {
+  .help-container {
+    width: 80%;
+  }
+}
