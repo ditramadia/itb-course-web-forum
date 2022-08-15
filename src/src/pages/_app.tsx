@@ -17,6 +17,7 @@ import '@/styles/Feedback.css'
 import '@/styles/FeedbackCard.css'
 import '@/styles/SubmissionForm.css'
 import '@/styles/404.css'
+import '@/styles/Help.css'
 import absoluteUrl from 'next-absolute-url'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
