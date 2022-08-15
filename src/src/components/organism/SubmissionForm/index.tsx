@@ -10,7 +10,7 @@ export default function SubmissionForm(props: SubmissionFormProps) {
   const { show } = props
 
   const formClass = cx({
-    'form-wrapper': true,
+    'submission-form-wrapper': true,
     show,
   })
 
