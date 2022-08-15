@@ -1,22 +1,32 @@
-.form-wrapper {
-  width: 90%;
-  margin: 30px auto;
+.submission-form-wrapper {
+  width: 100%;
 
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 20px;
+
+  border: 2px solid var(--color-black);
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.form-wrapper h1 {
-  font-size: 2.8rem;
-  line-height: 2.8rem;
+.submission-form-wrapper.show {
+  display: flex;
 }
 
-.form-wrapper h1 span {
+.submission-form-wrapper.close {
+  display: none;
+}
+
+.submission-form-wrapper h3 {
+  font-size: 1.4rem;
+}
+
+.submission-form-wrapper h1 span {
   color: var(--color-main);
 }
 
-.form-wrapper form {
+.submission-form-wrapper form {
   /* background-color: red; */
   width: 100%;
 
@@ -25,7 +35,7 @@
   gap: 14px;
 }
 
-.form-wrapper form .form-section {
+.submission-form-wrapper form .form-section {
   /* background-color: yellow; */
   width: 100%;
 
@@ -34,7 +44,7 @@
   gap: 8px;
 }
 
-.form-wrapper form .form-section .dosen-name-input {
+.submission-form-wrapper form .form-section .dosen-name-input {
   /* background-color: orange; */
   border: none;
   padding: 4px 0;
@@ -43,25 +53,25 @@
   font-size: 1.2rem;
 }
 
-.form-wrapper form .form-section .form-review {
+.submission-form-wrapper form .form-section .form-review {
   width: 100%;
 
   display: flex;
   flex-direction: column;
 }
 
-.form-wrapper form .form-section .form-review .material-textarea {
+.submission-form-wrapper form .form-section .form-review .material-textarea {
   width: 100%;
   height: fit-content;
 
   color: #9c9c9c;
 }
 
-.form-wrapper form .form-section.action {
+.submission-form-wrapper form .form-section.action {
   flex-direction: row;
 }
 
-.form-wrapper form .form-section.action button {
+.submission-form-wrapper form .form-section.action button {
   background-color: transparent;
   border: none;
   padding: 8px 0;
@@ -75,33 +85,23 @@
   transition: all 0.3s ease-in-out;
 }
 
-.form-wrapper form .form-section.action button.error {
-  opacity: 50%;
-}
-
-.form-wrapper form .form-section.action button:hover {
+.submission-form-wrapper form .form-section.action button:hover {
   color: var(--color-main);
 }
 
-.form-wrapper form .form-section.action a {
-  padding: 10px 28px;
-  color: #eb5b5b;
-  text-decoration: none;
-}
-
 @media screen and (min-width: 672px) {
-  .form-wrapper {
-    width: 80%;
+  .submission-form-wrapper {
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .form-wrapper {
-    margin: 60px auto;
-    gap: 50px;
+  .submission-form-wrapper {
+    width: 100%;
+    padding: 10px 20px;
   }
 
-  .form-wrapper h1 {
+  .submission-form-wrapper h1 {
     font-size: 3.6rem;
   }
 }

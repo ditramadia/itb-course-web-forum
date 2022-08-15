@@ -1,12 +1,24 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
+import cx from 'classnames'
 
-export default function SubmissionForm() {
+export interface SubmissionFormProps {
+  show: boolean
+}
+
+export default function SubmissionForm(props: SubmissionFormProps) {
+  const { show } = props
+
+  const formClass = cx({
+    'submission-form-wrapper': true,
+    show,
+  })
+
   return (
-    <div className="form-wrapper">
-      <h1>
+    <div className={formClass}>
+      <h3>
         <span>New</span> Feedback
-      </h1>
+      </h3>
 
       <form action="">
         <div className="form-section">
@@ -45,9 +57,6 @@ export default function SubmissionForm() {
 
         <div className="form-section action">
           <button type="submit">Submit</button>
-          <Link href="/matkul">
-            <a>Discard</a>
-          </Link>
         </div>
       </form>
     </div>

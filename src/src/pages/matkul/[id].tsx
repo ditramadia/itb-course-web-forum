@@ -6,8 +6,8 @@ import Navbar from '@/components/organism/Navbar'
 import { trpc } from '@/utils/trpc'
 import { useRouter } from 'next/router'
 import React from 'react'
-import Error from 'next/error'
 import Custom404 from '../404'
+import Head from 'next/head'
 
 export default function Matkul() {
   const router = useRouter()
@@ -23,18 +23,24 @@ export default function Matkul() {
   }
 
   return (
-    <div className="page-container">
-      <div className="page-wrapper">
-        <Navbar />
-        {!isLoading && data && (
-          <>
-            <MatkulHeader {...data} />
-            <DescRating {...data} />
-            <Feedback {...data} onChange={() => refetch()} />
-          </>
-        )}
+    <>
+      <Head>
+        <title>CariKelas | {data?.name}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="page-container">
+        <div className="page-wrapper">
+          <Navbar />
+          {!isLoading && data && (
+            <>
+              <MatkulHeader {...data} />
+              <DescRating {...data} />
+              <Feedback {...data} onChange={() => refetch()} />
+            </>
+          )}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   )
 }
