@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 
 import Footer from '@/components/organism/Footer'
 import Navbar from '@/components/organism/Navbar'
@@ -8,6 +9,10 @@ import AboutContent from '@/components/organism/AboutContent.tsx'
 export default function About() {
   return (
     <>
+      <Head>
+        <title>CariKelas | About</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="page-container">
         <div className="page-wrapper">
           <Navbar currentPage="about" />
