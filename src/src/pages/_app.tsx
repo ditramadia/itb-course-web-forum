@@ -17,15 +17,25 @@ import '@/styles/Feedback.css'
 import '@/styles/FeedbackCard.css'
 import '@/styles/SubmissionForm.css'
 import '@/styles/404.css'
+import absoluteUrl from 'next-absolute-url'
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
 }
 
 export default withTRPC<typeof serverRouter>({
-  config() {
+  config({ ctx }) {
+    let host: string
+    if (process.env.VERCEL_URL) {
+      host = process.env.VERCEL_URL as string
+    } else if (ctx) {
+      host = absoluteUrl(ctx.req)['origin'].concat('/')
+    } else {
+      host = ''
+    }
+
     return {
-      url: '/api/trpc',
+      url: `${host}/api/trpc`,
     }
   },
   ssr: true,

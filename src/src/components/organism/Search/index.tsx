@@ -63,6 +63,7 @@ export default function Search({ onSearch }: Props) {
             name="major"
             id="major-input"
             placeholder="Jurusan"
+            key="major"
             value={searchData.majorId}
             defaultValue="default"
             onChange={(e) =>
@@ -107,6 +108,7 @@ export default function Search({ onSearch }: Props) {
             id="category-input"
             placeholder="Kategori"
             value={searchData.type}
+            key="type"
             defaultValue="default"
             onChange={(e) =>
               setSearchData((data) => {
@@ -122,7 +124,7 @@ export default function Search({ onSearch }: Props) {
               })
             }
           >
-            <option value="default" disabled>
+            <option value="default" disabled key="type-all">
               Kategori
             </option>
             <option value="all" key="type-default">
