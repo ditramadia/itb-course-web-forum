@@ -25,7 +25,11 @@ export const subjectRouter = trpc
         },
         include: {
           major: true,
-          reviews: true,
+          reviews: {
+            orderBy: {
+              voteCount: 'desc',
+            },
+          },
         },
       })
 

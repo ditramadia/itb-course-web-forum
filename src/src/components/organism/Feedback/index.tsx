@@ -4,9 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-export const Feedback = ({
-  reviews,
-}: NonNullable<InferQueryOutput<'subject.findOne'>>) => {
+interface Props extends NonNullable<InferQueryOutput<'subject.findOne'>> {
+  onChange: () => void
+}
+
+export const Feedback = ({ reviews, onChange }: Props) => {
   return (
     <div className="feedback-wrapper">
       <div className="feedback-title">
@@ -24,7 +26,11 @@ export const Feedback = ({
 
       <div className="feedback-content">
         {reviews.map((review) => (
-          <FeedbackCard review={review} key={`review-${review.id}`} />
+          <FeedbackCard
+            review={review}
+            key={`review-${review.id}`}
+            onChange={onChange}
+          />
         ))}
       </div>
     </div>

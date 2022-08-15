@@ -13,7 +13,7 @@ export default function Matkul() {
   const router = useRouter()
   const { id } = router.query
 
-  const { data, isLoading } = trpc.useQuery([
+  const { data, isLoading, refetch } = trpc.useQuery([
     'subject.findOne',
     { id: parseInt(id as string) },
   ])
@@ -30,7 +30,7 @@ export default function Matkul() {
           <>
             <MatkulHeader {...data} />
             <DescRating {...data} />
-            <Feedback {...data} />
+            <Feedback {...data} onChange={() => refetch()} />
           </>
         )}
       </div>

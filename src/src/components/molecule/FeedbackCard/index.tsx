@@ -5,25 +5,18 @@ import { ArrowUp } from '../Icons/ArrowUp'
 
 export interface FeedbackCardProps {
   review: Review
+  onChange: () => void
 }
 
-export default function FeedbackCard({
-  review: sourceReview,
-}: FeedbackCardProps) {
+export default function FeedbackCard({ review, onChange }: FeedbackCardProps) {
   const [voted, setVoted] = useState<boolean>(false)
-  const [review, setReview] = useState<Review>(sourceReview)
   const voteMutation = trpc.useMutation(['review.incrementVote'])
 
   const onVote = () => {
     if (!voted) {
       voteMutation.mutate({ id: review.id })
-      setReview((prev) => {
-        return {
-          ...prev,
-          voteCount: prev.voteCount + 1,
-        }
-      })
       setVoted(true)
+      onChange()
     }
   }
 
