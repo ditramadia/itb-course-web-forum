@@ -9,7 +9,7 @@ interface Props extends NonNullable<InferQueryOutput<'subject.findOne'>> {
   onChange: () => void
 }
 
-export const Feedback = ({ reviews, onChange }: Props) => {
+export const Feedback = ({ reviews, onChange, id }: Props) => {
   const [showForm, setShowForm] = useState(false)
 
   return (
@@ -26,7 +26,14 @@ export const Feedback = ({ reviews, onChange }: Props) => {
         />
       </div>
 
-      <SubmissionForm show={showForm} />
+      <SubmissionForm
+        show={showForm}
+        subjectId={id}
+        onChange={() => {
+          onChange()
+          setShowForm(false)
+        }}
+      />
 
       <div className="feedback-content">
         {reviews.map((review) => (
