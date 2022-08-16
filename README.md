@@ -35,7 +35,7 @@ Taufan Fajarama Putrawansyah R
 
 ### Readme
 
-1. Brian Khend (16521208)
+1. Brian Kheng (16521208)
 2. Mario Nicholas Rayhan (16521250)
 3. Devina Ar'raudah (16521065)
 4. Auvarifqi Putra Diandra (16521092)
