@@ -3,6 +3,7 @@ import { Review } from '@prisma/client'
 import Image from 'next/image'
 import React, { useCallback, useState } from 'react'
 import { StarSolid } from '@/components/molecule/Icons/StarSolid'
+import Rating from './Rating'
 
 export interface FeedbackCardProps {
   review: Review
@@ -33,7 +34,7 @@ export default function FeedbackCard({ review, onChange }: FeedbackCardProps) {
       <div className="card-material">
         <p className="title">Review materi</p>
         <p className="rating">
-          <StarSolid /> {review.rateMaterial === null ? 0 : review.rateMaterial}
+          <Rating rating={review.rateMaterial} />
         </p>
         <p className="para">{review.description}</p>
       </div>
@@ -41,8 +42,7 @@ export default function FeedbackCard({ review, onChange }: FeedbackCardProps) {
       <div className="card-assignment">
         <p className="title">Review tugas & ujian</p>
         <p className="rating">
-          <StarSolid />{' '}
-          {review.rateAssignment === null ? 0 : review.rateAssignment}
+          <Rating rating={review.rateAssignment} />
         </p>
         <p className="para">{review.challenge}</p>
       </div>
@@ -50,8 +50,7 @@ export default function FeedbackCard({ review, onChange }: FeedbackCardProps) {
       <div className="card-recommendation">
         <p className="title">Saran</p>
         <p className="rating">
-          <StarSolid />{' '}
-          {review.rateRecommendation === null ? 0 : review.rateRecommendation}
+          <Rating rating={review.rateRecommendation} />
         </p>
         <p className="para">{review.advice}</p>
       </div>

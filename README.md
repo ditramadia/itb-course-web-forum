@@ -4,7 +4,7 @@ Project "Cari Kelas", presented by Group 16, is a solution to ITB college studen
 
 ## Deployment
 
-The website is deployed on [Vercel](https://milestone02-k16-three.vercel.app/).
+The website is deployed on [https://milestone02-k16-three.vercel.app/](https://milestone02-k16-three.vercel.app/).
 
 ## Local Setup
 
@@ -36,18 +36,18 @@ React is a free and open-source front-end JavaScript library for building user i
 
 Next.js is an open-source web development framework built on top of Node.js.
 
-### Typescript
+### [Typescript](https://www.typescriptlang.org/)
 
 TypeScript is a free and open source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
 
-### CSS
+### [CSS](https://www.w3schools.com/css/)
 
 CSS stands for Cascading Style Sheets. CSS describes how HTML elements are to be displayed on screen, paper, or in other media
 
-### tPRS
+### [tPRS](https://trpc.io/)
 
 tRPC is a very light library which lets you build fully typesafe APIs without the need of schemas or code generation.
 
-### Prisma
+### [Prisma](https://www.prisma.io/)
 
 Prisma is an open-source ORM that drastically simplifies data modeling, migrations, and data access for SQL databases in Node. js and TypeScript.
