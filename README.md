@@ -45,6 +45,10 @@ Taufan Fajarama Putrawansyah R
 
 Project "Cari Kelas", presented by Group 16, is a solution to ITB college students' problems, which is mostly a lack of information about the compulsory and elective courses provided by ITB. The implementation will be built on a website which contains more than enough information and reviews for each of the courses from every major in ITB. The core of the website is built with the help of Next.js and the ReactJS framework.
 
+## Presentation
+
+The presentation is accesible on [https://drive.google.com/file/d/1c3qukTunJqXImHZQduSDjXLEi6Ke-41t/view?usp=sharing](https://drive.google.com/file/d/1c3qukTunJqXImHZQduSDjXLEi6Ke-41t/view?usp=sharing)
+
 ## Deployment
 
 The website is deployed on [https://milestone02-k16-three.vercel.app/](https://milestone02-k16-three.vercel.app/).
