@@ -9,23 +9,23 @@ import Head from 'next/head'
 export default function Help() {
   return (
     <>
-    <div className="page-container">
-      <Head>
-        <title>CariKelas | Help</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="page-container">
-        <div className="page-wrapper">
-          <Navbar currentPage="help" />
-          <PageHeader title="Help" subtitle="Bagaimana cara mencari mata kuliah?" />
-          <HelpContent />
-          <PageHeader title="FAQ" subtitle="Masih bingung?" />
-          <FaqContent/>
+        <Head>
+          <title>CariKelas | Help</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className="page-container">
+          <div className="page-wrapper">
+            <Navbar currentPage="help" />
+            <PageHeader title="Help" subtitle="Cara menggunakan CariKelas" />
+            <HelpContent />
+            <PageHeader title="FAQ" subtitle="Masih bingung?" />
+            <FaqContent />
+          </div>
+
+          <Footer />
         </div>
-        
-        <Footer />
       </div>
-    </div>
-  </>
+    </>
   )
 }
