@@ -72,6 +72,19 @@ export default function SubmissionForm({
               className="material-textarea"
               {...register('description', { required: true })}
             ></textarea>
+            <label>Rating materi</label>
+            <input
+              {...register('rateMaterial', {
+                min: 1,
+                max: 5,
+                valueAsNumber: true,
+              })}
+              type="number"
+              className="rating-input"
+              placeholder="1-5"
+              min={1}
+              max={5}
+            />
           </div>
 
           <div className="form-review">
@@ -80,6 +93,19 @@ export default function SubmissionForm({
               className="material-textarea"
               {...register('challenge')}
             ></textarea>
+            <label>Rating tugas & ujian</label>
+            <input
+              {...register('rateAssignment', {
+                min: 1,
+                max: 5,
+                valueAsNumber: true,
+              })}
+              type="number"
+              className="rating-input"
+              placeholder="1-5"
+              min={1}
+              max={5}
+            />
           </div>
 
           <div className="form-review">
@@ -88,47 +114,23 @@ export default function SubmissionForm({
               className="material-textarea"
               {...register('advice')}
             ></textarea>
+            <label>Rating Saran</label>
+            <input
+              {...register('rateRecommendation', {
+                min: 1,
+                max: 5,
+                valueAsNumber: true,
+              })}
+              type="number"
+              className="rating-input"
+              placeholder="1-5"
+              min={1}
+              max={5}
+            />
           </div>
         </div>
 
-        <div className="form-section">
-          <input
-            {...register('rateMaterial', {
-              min: 1,
-              max: 5,
-              valueAsNumber: true,
-            })}
-            type="number"
-            className="dosen-name-input"
-            placeholder="Rating materi"
-            min={1}
-            max={5}
-          />
-          <input
-            {...register('rateAssignment', {
-              min: 1,
-              max: 5,
-              valueAsNumber: true,
-            })}
-            type="number"
-            className="dosen-name-input"
-            placeholder="Rating tugas dan ujian"
-            min={1}
-            max={5}
-          />
-          <input
-            {...register('rateRecommendation', {
-              min: 1,
-              max: 5,
-              valueAsNumber: true,
-            })}
-            type="number"
-            className="dosen-name-input"
-            placeholder="Rating rekomendasi"
-            min={1}
-            max={5}
-          />
-        </div>
+        <div className="form-section"></div>
 
         <div className="form-section action">
           <button type="submit">Submit</button>

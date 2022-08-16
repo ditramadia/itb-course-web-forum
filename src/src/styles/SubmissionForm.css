@@ -44,6 +44,12 @@
   gap: 8px;
 }
 
+.submission-form-wrapper form .form-section .form-review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .submission-form-wrapper form .form-section .dosen-name-input {
   /* background-color: orange; */
   border: none;
@@ -62,9 +68,22 @@
 
 .submission-form-wrapper form .form-section .form-review .material-textarea {
   width: 100%;
-  height: fit-content;
+  height: 150px;
+
+  padding: 8px 14px;
 
   color: #9c9c9c;
+  resize: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submission-form-wrapper form .form-section .rating-input {
+  padding: 8px 0 8px 14px;
+  width: 60px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--color-black);
 }
 
 .submission-form-wrapper form .form-section.action {
