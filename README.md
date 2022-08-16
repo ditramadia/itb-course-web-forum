@@ -1,7 +1,46 @@
 # Project Milestone 2 - Kelompok 16
 ## Asisten
 Taufan Fajarama Putrawansyah R
+## Contribution
+### Design
 
+1. Fawwaz Abrial Saffa (16521147)
+2. Rayhan Siregar (16521301)
+
+### FrontEnd
+
+1. Ditra Rizqa Amadia (16521531)
+2. Christian Albert Hasiholan (16521120)
+
+### BackEnd
+
+1. Akbar Maulana Ridho (16521147)
+
+### Proposal
+
+1. Vieri Fajar Firdaus (16521294)
+
+### PowerPoint
+
+1. Devina Ar'raudah (16521065)
+2. Auvarifqi Putra Diandra (16521092)
+3. Muhammad Shulhan (16521379)
+4. Muhammad Zaki Amanullah (16521377)
+
+### Database
+
+1. Muhammad Naufal Nalendra (16521240)
+2. Ananda Abdul Hafizh (16521065)
+3. Vieri Fajar Firdaus (16521294)
+
+### Readme
+
+1. Brian Khend (16521208)
+2. Mario Nicholas Rayhan (16521250)
+3. Devina Ar'raudah (16521065)
+4. Auvarifqi Putra Diandra (16521092)
+5. Muhammad Shulhan (16521379)
+6. Muhammad Zaki Amanullah (16521377)
 ## CariKelas
 
 Project "Cari Kelas", presented by Group 16, is a solution to ITB college students' problems, which is mostly a lack of information about the compulsory and elective courses provided by ITB. The implementation will be built on a website which contains more than enough information and reviews for each of the courses from every major in ITB. The core of the website is built with the help of Next.js and the ReactJS framework.
