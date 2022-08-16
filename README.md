@@ -1,4 +1,8 @@
 # Project Milestone 2 - Kelompok 16
+## Asisten
+Taufan Fajarama Putrawansyah R
+
+## CariKelas
 
 Project "Cari Kelas", presented by Group 16, is a solution to ITB college students' problems, which is mostly a lack of information about the compulsory and elective courses provided by ITB. The implementation will be built on a website which contains more than enough information and reviews for each of the courses from every major in ITB. The core of the website is built with the help of Next.js and the ReactJS framework.
 
