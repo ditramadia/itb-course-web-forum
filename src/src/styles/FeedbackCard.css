@@ -29,6 +29,15 @@
   gap: 2px;
 }
 
+.feedback-card .card-material .rating,
+.feedback-card .card-assignment .rating,
+.feedback-card .card-recommendation .rating {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+}
+
 .feedback-card .card-material .title,
 .feedback-card .card-assignment .title,
 .feedback-card .card-recommendation .title {

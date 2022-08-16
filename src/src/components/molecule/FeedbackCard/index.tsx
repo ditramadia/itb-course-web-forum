@@ -1,7 +1,8 @@
 import { trpc } from '@/utils/trpc'
 import { Review } from '@prisma/client'
+import Image from 'next/image'
 import React, { useCallback, useState } from 'react'
-import { ArrowUp } from '../Icons/ArrowUp'
+import { StarSolid } from '@/components/molecule/Icons/StarSolid'
 
 export interface FeedbackCardProps {
   review: Review
@@ -31,23 +32,39 @@ export default function FeedbackCard({ review, onChange }: FeedbackCardProps) {
 
       <div className="card-material">
         <p className="title">Review materi</p>
+        <p className="rating">
+          <StarSolid /> {review.rateMaterial === null ? 0 : review.rateMaterial}
+        </p>
         <p className="para">{review.description}</p>
       </div>
 
       <div className="card-assignment">
         <p className="title">Review tugas & ujian</p>
+        <p className="rating">
+          <StarSolid />{' '}
+          {review.rateAssignment === null ? 0 : review.rateAssignment}
+        </p>
         <p className="para">{review.challenge}</p>
       </div>
 
       <div className="card-recommendation">
         <p className="title">Saran</p>
+        <p className="rating">
+          <StarSolid />{' '}
+          {review.rateRecommendation === null ? 0 : review.rateRecommendation}
+        </p>
         <p className="para">{review.advice}</p>
       </div>
 
       <div className="card-footer">
         <div className="like-wrapper">
           <div className="like" onClick={onVote}>
-            <ArrowUp />
+            <Image
+              src="/icon/ic-like-stroke.svg"
+              width={26}
+              height={26}
+              alt="like"
+            />
           </div>
           <p className="header-footer">{review.voteCount}</p>
         </div>

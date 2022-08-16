@@ -1,7 +1,6 @@
 import FeedbackCard from '@/components/molecule/FeedbackCard'
 import { InferQueryOutput } from '@/utils/trpc'
 import Image from 'next/image'
-import Link from 'next/link'
 import React, { useState } from 'react'
 import SubmissionForm from '../SubmissionForm'
 
